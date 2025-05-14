@@ -1,2 +1,6 @@
 flask
 requests
+
+# Azure Function dependencies
+azure-functions
+sendgrid
