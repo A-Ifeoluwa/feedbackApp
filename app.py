@@ -4,7 +4,7 @@ import os
 
 app = Flask(__name__)
 
-AZURE_FUNCTION_URL = os.getenv("AZURE_FUNCTION_URL")
+AZURE_FUNCTION_URL = os.getenv("AZURE_FUNCTION_URL") 
 
 @app.route('/')
 def index():
