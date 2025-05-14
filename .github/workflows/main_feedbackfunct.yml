@@ -59,15 +59,18 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: python-app
-
+          
       - name: Unzip artifact for deployment
-        run: unzip release.zip     
-        
+        run: unzip release.zip -d release
+
+      - name: List files after unzip
+        run: ls -R release
+
       - name: 'Deploy to Azure Functions'
         uses: Azure/functions-action@v1
         id: deploy-to-function
         with:
           app-name: 'FeedbackFunct'
           slot-name: 'Production'
-          package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
+          package: './release'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_35DD27308B974A5E82D56EC789528378 }}
