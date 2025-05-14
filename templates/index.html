@@ -1,13 +1,71 @@
 <!DOCTYPE html>
 <html>
-<head><title>Feedback Form</title></head>
+<head>
+  <title>Feedback Form</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 500px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 20px;
+      padding: 12px;
+      background-color: #0078D4;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #005a9e;
+    }
+  </style>
+</head>
 <body>
-  <h1>Feedback Form</h1>
-  <form action="/submit" method="POST">
-    <input name="name" placeholder="Your name" required><br><br>
-    <input name="email" type="email" placeholder="Your email" required><br><br>
-    <textarea name="message" placeholder="Your feedback" required></textarea><br><br>
-    <button type="submit">Send</button>
-  </form>
+  <div class="container">
+    <h1>Feedback Form with ifeOps</h1>
+    <h3>Thank you for being a part of my learning process</h3>
+    <h4>I am basically testing the use of Azure Function as API, which will automatically send a mail to your provided email.</h4>
+    <h4>Successful completion of this will mark the success of this project. Thanks</h4>
+    <form action="/submit" method="POST">
+      <input name="name" placeholder="Your name" required><br>
+      <input name="email" type="email" placeholder="Your email" required><br>
+      <textarea name="message" placeholder="Your feedback" rows="5" required></textarea><br>
+      <button type="submit">Send Feedback</button>
+    </form>
+  </div>
 </body>
 </html>
