@@ -74,3 +74,12 @@ jobs:
           slot-name: 'Production'
           package: './release'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_35DD27308B974A5E82D56EC789528378 }}
+
+      - name: Prepare function app content
+        run: |
+          mkdir -p release/FeedbackTrigger
+          cp function_app.py release/FeedbackTrigger/__init__.py
+          cp function.json release/FeedbackTrigger/function.json
+          cp host.json release/
+          cp requirements.txt release/
+
